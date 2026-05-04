@@ -15,7 +15,7 @@ def create_file(file_path, content=""):
 
         file_name = path.name
 
-        print(f"File '{file_name}' created successfully at: {file_path}")
+        # print(f"File '{file_name}' created successfully at: {file_path}")
 
         return {
             "status": "success",
