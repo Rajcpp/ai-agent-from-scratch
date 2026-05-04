@@ -45,7 +45,7 @@ tools_inputs = {
         "name": str,
     },
     "create_file": {
-        "filename": str,
+        "file_path": str,
         "content": str,
     },
     "create_folder": {
