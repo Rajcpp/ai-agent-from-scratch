@@ -6,7 +6,7 @@ from core.input_handler import get_user_command
 def main():
     memory = []
     while True:
-        response: dict = fake_llm(get_user_command())
+        response: dict | None = fake_llm(get_user_command())
         if response is None:
             continue
 
