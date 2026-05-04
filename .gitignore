@@ -8,6 +8,7 @@ dist/
 wheels/
 *.egg-info
 tool_testing/
+logs/
 
 # Virtual environments
 .venv

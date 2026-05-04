@@ -1,11 +1,11 @@
 from config import tools_functions
 from core.fake_llm import llm as fake_llm
 from core.input_handler import get_user_command
-from core.logger import llm_logger, logger, memory_logger, tool_logger
+from core.logger import llm_logger, memory_logger, system_logger, tool_logger
 
 
 def main():
-    logger.info("started")
+    system_logger.info("started")
     memory = []
     while True:
         response: dict | None = fake_llm(get_user_command())
@@ -23,12 +23,12 @@ def main():
         elif action == "FINISH":
             result = "Task finished"
             memory.append({"llm_response": response, "tool_response": result})
-            logger.info("finished")
+            system_logger.info("finished")
             break
 
         else:
             result = "Unsupported action"
-            logger.error("action not in tools")
+            system_logger.error("action not in tools")
 
         memory.append({"llm_response": response, "tool_response": result})
         memory_logger.info({"llm_response": response, "tool_response": result})
