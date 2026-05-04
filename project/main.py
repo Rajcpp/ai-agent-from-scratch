@@ -15,20 +15,22 @@ def main():
 
         if action in tools_functions:
             result = tools_functions[action](**parameters)
-            print(f"Result: {result}")
+            # print(f"Result: {result}")
 
         elif action == "FINISH":
             result = "Task finished"
             memory.append({"llm_response": response, "tool_response": result})
-            print("Finishing the session. Goodbye!")
+            # print("Finishing the session. Goodbye!")
             break
 
         else:
             result = "Unsupported action"
-            print("Error: Unsupported action.")
+            # print("Error: Unsupported action.")
 
         memory.append({"llm_response": response, "tool_response": result})
         memory.append({"llm_response": response, "tool_response": result})
+
+    print(memory)
 
 
 if __name__ == "__main__":
