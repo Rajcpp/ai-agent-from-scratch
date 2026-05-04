@@ -1,4 +1,4 @@
-from config import tools, tools_inputs
+from config import tools_functions, tools_inputs
 from core.validator import convert_value
 
 
@@ -8,7 +8,7 @@ def get_user_command() -> dict | None:
     if action == "FINISH":
         return {"action": "FINISH", "parameters": {}}
 
-    if action not in tools:
+    if action not in tools_functions:
         print("Error: Unsupported action.")
         return None
 
