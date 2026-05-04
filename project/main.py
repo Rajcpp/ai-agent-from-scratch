@@ -28,7 +28,6 @@ def main():
             # print("Error: Unsupported action.")
 
         memory.append({"llm_response": response, "tool_response": result})
-        memory.append({"llm_response": response, "tool_response": result})
 
     print(memory)
 
